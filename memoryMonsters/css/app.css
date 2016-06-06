@@ -1,0 +1,36 @@
+header {
+    background-color: black;
+    padding:10px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: lightgreen;
+    font-size: 4em;
+}
+h2 {
+    color: antiquewhite;
+}
+
+.niceText {
+    font-style: italic;
+    color:lightgreen;
+}
+
+.logo {float:right}
+
+.card {
+    width:170px;
+    height:192px;
+    float:left;
+    margin: 10px;
+}
+
+.card img {
+    position: absolute;
+}
+
+.card.flipped .back{
+    display:none;
+}
+

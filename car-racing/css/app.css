@@ -1,0 +1,36 @@
+body {
+    background: black
+}
+header {
+    padding:0px 80px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: lightgreen;
+    font-size: 4em;
+}
+h2 {
+    color: antiquewhite;
+}
+
+.niceText {
+    font-style: italic;
+    color:darkgreen;
+}
+
+.logo {float:right}
+
+.car {
+   width: 200px;
+   height: 100px;
+   background-image: url(../img/car/1.png);
+   background-repeat: no-repeat; 
+   margin-bottom: 10px;
+   position:relative;
+   left: 10px;
+}
+
+.car:nth-child(1) {
+    background-image: url(../img/car/2.png);
+}
