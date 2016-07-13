@@ -4,7 +4,7 @@ var source = ['4', '2', 'puki', '1', '3', '11', 'muki', '1'];
 var result = source
                 .map(x => parseInt(x))
                 .filter(x => !isNaN(x))
-                .reduce((x, y) => x + y);
+                .reduce((acc, curr) => acc + curr);
 
 console.log('Simple array result :', result);
 

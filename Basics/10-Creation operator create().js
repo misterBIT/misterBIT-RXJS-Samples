@@ -13,8 +13,8 @@ function subscribe(observer) {
 }
 
 
-var subject$ = new Rx.Observable(subscribe);
-subject$.subscribe(onNext, onError, onComplete);
+// var subject$ = new Rx.Observable(subscribe);
+// subject$.subscribe(onNext, onError, onComplete);
 
 
 

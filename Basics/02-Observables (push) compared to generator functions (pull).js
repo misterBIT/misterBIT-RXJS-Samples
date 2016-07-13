@@ -15,8 +15,7 @@ var iterator = fibo();
 console.log(iterator.next().value);
 console.log(iterator.next().value);
 console.log(iterator.next().value);
-
-
+console.log(iterator.next().value);
 
 
 // Observable (PUSH)

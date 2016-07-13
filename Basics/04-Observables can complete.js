@@ -1,3 +1,12 @@
+const stream$ = Rx.Observable.interval(500).take(7);
+stream$.subscribe(
+    (i)=> console.log('Next: ', i),
+    (err)=> console.log('Error: ', err),
+    ()=> console.log('Complete! ')
+    )
+
+
+
 var source$ = Rx.Observable.create(function (observer) {
   try {
     console.log('Hello');
@@ -7,6 +16,7 @@ var source$ = Rx.Observable.create(function (observer) {
     setTimeout(function () {
       observer.next(300);
       observer.complete();
+      
     }, 1000);
   } catch (err) {
     observer.error(err);

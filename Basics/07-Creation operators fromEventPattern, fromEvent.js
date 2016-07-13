@@ -1,12 +1,12 @@
-var arr = [42, 100, 200];
-var foo = Rx.Observable.from(arr);
+// var arr = [42, 100, 200];
+// var foo = Rx.Observable.from(arr);
 
-function addEventHandler(handler) {
-  document.addEventListener('click', handler);
-}
-function removeEventHandler(handler) {
-  document.removeEventListener('click', handler);
-}
+// function addEventHandler(handler) {
+//   document.addEventListener('click', handler);
+// }
+// function removeEventHandler(handler) {
+//   document.removeEventListener('click', handler);
+// }
 
 // var evs$ = Rx.Observable.fromEventPattern(
 //   addEventHandler, removeEventHandler

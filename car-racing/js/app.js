@@ -1,7 +1,7 @@
 const END_OF_ROAD = 800;
 
 const flatten = list => list.reduce(
-    (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
+    (acc, curr) => acc.concat(Array.isArray(curr) ? flatten(curr) : curr), []
 );
 
 const moveCar = (elCar, power) => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         //.map(i => elCar1)
                         .do(i => {moveCar(elCars[0], -50);moveCar(elCars[1], -50)})
     const timer = resistance$.subscribe(
-        v   =>  console.log('Time is Passing:', v),
+        v   =>  v,
         e   =>  console.log(e),
         ()  =>  console.log('Completed!')
     );
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const player1$ = keys$
                         .filter(e => gameKeys[0].includes(e.code))
                         .bufferCount(2)
-                        // .do((x)=> console.log('Array: ', x))
+                        
                         .map(evs => ({player: 0, evs}))
                         
 
@@ -56,11 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         .filter(({evs}) => evs[0].code !== evs[1].code)                        
                         .map(({player, evs}) => ({player, diff: parseInt(evs[1].timeStamp - evs[0].timeStamp)}))
                         .map(({player, diff}) => ({player, force: Math.max(0, 100 - diff )}))
+                        .do((obj)=>console.log(obj))
                         .map(({player, force}) => moveCar(elCars[player], force))
                         .takeWhile(loc => loc < END_OF_ROAD)
 
     source$.subscribe(
-        v   =>  console.log('Value:', v),
+        v   =>  v,
         e   =>  console.log(e),
         ()  =>  {
             console.log('Completed!');

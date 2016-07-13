@@ -1,7 +1,7 @@
 
 const subject$ = new Rx.Observable((observer) => {
     let inter = setInterval(() => observer.next('Proud Single Value') , 1000);
-    return function unsubscribe() {
+    return function unsubscribeMe() {
         clearInterval(inter);
     };
 });
