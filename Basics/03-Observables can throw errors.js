@@ -1,4 +1,6 @@
-//Function
+// Observables (just like functions) can throw errors:
+
+// Function
 function foo() {
   if (true || false) throw new Error('invalid something');
   return 42;

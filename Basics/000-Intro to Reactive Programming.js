@@ -1,3 +1,5 @@
+// Observables are like Arrays:
+
 // Using Array
 var source = ['4', '2', 'puki', '1', '3', '11', 'muki', '1'];
 

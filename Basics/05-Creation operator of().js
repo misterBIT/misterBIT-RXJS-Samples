@@ -1,6 +1,7 @@
+// Creation operator of()
 var foo = Rx.Observable.of(7, 4, 42);
 
-// This how we could implement the 'of' ourself: 
+// This is how we could implement the 'of' ourself: 
 // var foo = Rx.Observable.create(function (observer) {
 //   observer.next(7);
 //   observer.next(4);

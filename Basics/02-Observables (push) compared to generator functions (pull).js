@@ -1,4 +1,4 @@
-// Observables (push) compared to generator functions (pull)
+// Observables compared to generator functions
 
 // Generator (PULL) - passive generator of values
 // Producer

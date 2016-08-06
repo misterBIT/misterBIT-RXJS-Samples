@@ -1,4 +1,8 @@
-// 01-Observables compared to Functions
+// 01-Observables are comparable to functions
+// Points to Consider:
+// observables are lazy like functions 
+// observables are synchronous like functions
+// observables can emit multiple values over time! 
 
 // function foo() {
 //   console.log('Hello');
@@ -10,7 +14,6 @@
 // console.log('after');
 
 console.log('NOW with Observable:');
-
 
 var data$ = Rx.Observable.create(function (observer) {
   console.log('Hello');
@@ -28,15 +31,11 @@ data$.subscribe(function (x) {
 });
 console.log('after');
 
-setTimeout(()=>{
-  data$.subscribe(function (x) {
-    console.log('Me Too!', x);
-  })
-}, 2000)
+// Here is another subscriber joining later
+// setTimeout(()=>{
+//   data$.subscribe(function (x) {
+//     console.log('Me Too!', x);
+//   })
+// }, 2000)
 
 
-
-// Points to Consider:
-// observables are lazy like functions 
-// observables are synchronous like functions
-// observables can emit multiple values over time! 

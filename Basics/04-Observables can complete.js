@@ -1,3 +1,6 @@
+// Observables can complete:
+
+// Using the take(count) oprator:
 const stream$ = Rx.Observable.interval(500).take(7);
 stream$.subscribe(
     (i)=> console.log('Next: ', i),
@@ -6,7 +9,7 @@ stream$.subscribe(
     )
 
 
-
+// Manually completing the stream:
 var source$ = Rx.Observable.create(function (observer) {
   try {
     console.log('Hello');

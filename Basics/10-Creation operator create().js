@@ -1,3 +1,6 @@
+// Manually creating an Observable:
+// var subject$ = new Rx.Observable(subscribe);
+// subject$.subscribe(onNext, onError, onComplete);
 
 
 var onNext      = function (x) { console.log('next: ' + x); };
@@ -13,12 +16,8 @@ function subscribe(observer) {
 }
 
 
-// var subject$ = new Rx.Observable(subscribe);
-// subject$.subscribe(onNext, onError, onComplete);
 
-
-
-// This is sort of what happen behind the scenes:
+/// This is sort of what happen behind the scenes:
 var observer = {
   next: onNext,
   error: onError,

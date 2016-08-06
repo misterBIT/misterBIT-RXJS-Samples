@@ -1,3 +1,4 @@
+// Returning subscriptions from the subscribe function:
 
 const subject$ = new Rx.Observable((observer) => {
     let inter = setInterval(() => observer.next('Proud Single Value') , 1000);

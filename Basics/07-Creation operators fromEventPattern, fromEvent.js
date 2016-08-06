@@ -1,5 +1,5 @@
-// var arr = [42, 100, 200];
-// var foo = Rx.Observable.from(arr);
+// fromEventPattern is a general mechanism for adding/removing event listeners,
+// fromEvent is a good shortcut.
 
 // function addEventHandler(handler) {
 //   document.addEventListener('click', handler);
@@ -12,7 +12,7 @@
 //   addEventHandler, removeEventHandler
 // );
 
-// var evs$ = Rx.Observable.fromEvent(document, 'click')
+
 var evs$ = Rx.Observable.fromEvent(document, 'mousemove')
   
   .map(ev => ev.x)
