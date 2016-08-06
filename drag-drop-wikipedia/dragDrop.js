@@ -1,4 +1,16 @@
+// Just handling that button
+var clicks = Rx.Observable.fromEvent(document.querySelector('#btn'), 'click')
 
+
+function onNext(x) {console.log('Oh Ji Thanks', x);}
+function onError(e){console.error(e)}
+function OnCompleted() {console.log('cleaning up')};
+
+clicks.subscribe(onNext, onError, OnCompleted);
+
+
+
+// Monkey patching for ease of demo:
 Array.prototype.concatAll = function() {
     var results = [];
 
@@ -11,7 +23,7 @@ Array.prototype.concatAll = function() {
     return results;
 };
 
-
+// Drag and Drop with observables:
 var Observable = Rx.Observable;
 
 var parent = document.getElementById("parent");
