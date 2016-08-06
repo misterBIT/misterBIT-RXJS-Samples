@@ -16,7 +16,6 @@ function subscribe(observer) {
 }
 
 
-
 /// This is sort of what happen behind the scenes:
 var observer = {
   next: onNext,
