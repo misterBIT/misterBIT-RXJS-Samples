@@ -18,11 +18,11 @@ console.log('NOW with Observable:');
 var data$ = Rx.Observable.create(function (observer) {
   console.log('Hello');
   observer.next(42);
-  observer.next(100);
-  observer.next(200);
-  setTimeout(function () {
-    observer.next(300);
-  }, 3000);
+  // observer.next(100);
+  // observer.next(200);
+  // setTimeout(function () {
+  //   observer.next(300);
+  // }, 3000);
 });
 
 console.log('before');
