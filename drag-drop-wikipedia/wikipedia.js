@@ -2,17 +2,17 @@ var $input = $('#input'),
     $results = $('#results');
 
 /* Only get the value from each key up */
-var keyups = Rx.Observable.fromEvent($input, 'keyup')
-    .do(e => console.log('e is: ', e))
+var keyups$ = Rx.Observable.fromEvent($input, 'keyup')
+    // .do(e => console.log('e is: ', e))
     .pluck('target', 'value')
-    .do(e => console.log('value is: ', e))
+    // .do(e => console.log('value is: ', e))
     .filter(function (text) {
         return text.length > 2;
     })
-    .do(e => console.log('filtered is: ', e))
+    // .do(e => console.log('filtered is: ', e))
 
 /* Now debounce the input for 500ms */
-var debounced = keyups.debounce(500 /* ms */);
+var debounced = keyups$.debounce(500 /* ms */);
 
 /* Now get only distinct values, so we eliminate the arrows and other control characters */
 var distinct = debounced.distinctUntilChanged();
@@ -37,13 +37,15 @@ function searchWikipedia (term) {
 suggestions.subscribe(
     function (data) {
         console.log(data);
+
+        const [dummy, terms, descs, links] = data;
+
         $results
             .empty()
-            .append ($.map(data[1], function (value, i) {
-            return $('<li>').html('<a href="' + data[3][i] +
-                                        '" title="'+data[2][i]+'" target="_blank">'+
-                                        value + 
-                                    '</a>');
+            .append ($.map(terms, function (term, i) {
+            return $('<li>').html(`<a href="${links[i]}" title="${descs[i]}" target="_blank">
+                                        ${term} 
+                                    </a>`);
         }));
     },
     function (error) {
@@ -51,3 +53,11 @@ suggestions.subscribe(
             .empty()
             .text('Error:' + JSON.stringify(error));
     });
+
+    // BEFORE ES6:
+    //     .append ($.map(data[1], function (value, i) {
+    //     return $('<li>').html('<a href="' + data[3][i] +
+    //                                 '" title="'+data[2][i]+'" target="_blank">'+
+    //                                 value + 
+    //                             '</a>');
+    // }));
