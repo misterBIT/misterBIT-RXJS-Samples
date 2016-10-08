@@ -3,7 +3,7 @@
 
 var subject = new Rx.ReplaySubject(3); // buffer 3 values for new subscribers
 // You can also specify a window time in milliseconds, to determine how old the recorded values can be
-// var subject = new Rx.ReplaySubject(100, 500 /* windowTime */);
+// var subject = new Rx.ReplaySubject(3, 1000 /* windowTime */);
 
 
 subject.subscribe({

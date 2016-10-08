@@ -1,5 +1,6 @@
-// var source = Rx.Observable.from([1, 2, 3]);
+var source = Rx.Observable.from([1, 2, 3]);
 
+// Multiple sucscribers are usually a seperate execution context
 // source.subscribe({
 //   next: (v) => console.log('observerA: ' + v)
 // });
@@ -7,9 +8,9 @@
 //   next: (v) => console.log('observerB: ' + v)
 // });
 
+// Unless the observable is multicast.
+// Subjects are mulicasts.
 
-
-var source = Rx.Observable.from([1, 2, 3]);
 var subject = new Rx.Subject();
 var multicasted = source.multicast(subject);
 
